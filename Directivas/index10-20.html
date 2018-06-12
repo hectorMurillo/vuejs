@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Directivas</title>
+</head>
+<body>
+    <div id="vm">
+        <h1 v-text="texto"></h1>
+        <hr>
+        <img :src="imagen" alt="">
+        <hr>
+        <div>
+            <i>Sin la directiva</i>
+            <br>
+            {{textoHTML}}            
+        </div>
+        <br>
+        <i>Con directiva</i>
+        <br>
+        <div v-html = "textoHTML">
+
+        </div>
+        <hr>
+        <div>Condicionales</div>
+        <template v-if="mostrar">Este es el primer div</template>
+        <br>
+        <!-- <template v-else>Este es el segundo div</template>                 -->
+        la etiqueta template ayuda a no mostrar el div <br>
+        o con lo que se vaya a agrupar otros elementos        
+        <br>
+        <hr>
+        <p>
+            Si por alguna razón deseo esconder en pantalla pero ocultarlo con css <br>
+            puedo utilizar v-show, cambia el display a none;
+        </p> 
+        <div v-show='mostrarConCss'>
+            <h3>Este texto depende del css</h3>
+        </div>  
+        <br>
+        <hr>
+        <div>Iteraciones</div>
+        <ul>
+            <template v-for="(pais,indice) in paises">
+                <li>
+                    {{indice+1}} - {{pais}}
+                </li>
+                <hr />
+            </template>            
+        </ul>
+        <hr />
+        <br>
+        <h1>Empleado {{empleado.nombre}}</h1>
+        <ul>
+            <li v-for="(valor, llave) in empleado">
+                {{llave}} -> {{valor}}
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+</body>
+</html>

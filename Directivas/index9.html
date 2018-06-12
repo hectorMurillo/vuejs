@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>        
+    <title>Directivas</title>
+</head>
+<body>
+    <h1>Directivas</h1>
+    <h3>Las directivas son atributos especiales con el prefijo <i>v-</i></h3>    
+    <p>A las directivas les podemos pasar directivas</p>
+    <p>Las directivas van dentro de las etiquetas de html</p>        
+    <table border="1">
+        <tr>
+            <td>Directiva</td>
+            <td>Ejemplo</td>
+            <td>¿Qué hace?</td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-bind</h3>
+            </td>
+            <td>
+                < a v-bind:href="miLink">Este es el link< /a>
+            </td>
+            <td>
+               Recibe un argumento la propiedad que se bindeará 
+               <br/>
+               y a esa propiedad se le asigna una variable para que
+               <br/>
+               sea de manera dinámica.
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-cloak</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-text</h3> 
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-html</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-model</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-if</h3>
+            </td>
+            <td>
+                <code>
+                    < p v-if = "miVar">  mi texto< p/>
+                </code>
+                <br>
+                <code>
+                    < p v-if = "miVar == 5">  mi texto< p/>
+                </code>
+                <br>
+                <code>
+                    < p v-if = "x==y">  mi texto< p/>
+                </code>
+            </td>            
+            <td>
+                <p>
+                    Si se cumple la condicion de la variable
+                <br>
+                    se muestra el parrafo o no se muestra. 
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-else</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-else-if</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-for</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-once</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-on</h3>
+            </td>
+            <td>
+                    < input v-on:keyup="enviar">
+                    <br>
+                    < input v-on:keyup.enter="enviar">                    
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-pre</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>v-show</h3>
+            </td>
+            <td>
+
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+    </table>
+    <script src="vue.js" />
+</body>
+</html>
