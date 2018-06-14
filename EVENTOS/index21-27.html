@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>    
+    <title>Eventos</title>
+</head>
+<body style="font-size: 18px;">
+    <div id="eventos">
+        <button v-on:mouseEnter="sumarUno">
+            Sumar uno
+        </button>
+        <button v-on:mouseEnter="restarUno">
+            Restar uno
+        </button>
+        <button v-on:click="alerta('Esta es una alerta.')">
+            Mostrar alerta
+        </button>
+        <hr>
+        {{contador}}
+        <hr>
+        <hr>
+        <br>
+        <h2>Pase el mouse por el cuadro</h2>
+        <h3>Se le puede mandar más de un evento a un elemento</h3>        
+        <div style="height:300px;border-color:blue; border:1px; border-style:solid;"
+             v-on:mousemove="mostrarUbicacion"
+             v-on:click="contador++">             
+             <div style="height: 30px; border:1px solid red"
+                  v-on:mousemove.stop>
+
+             </div>
+        </div>
+        <h3 style="font-size: 46px;">x:{{x}},y:{{y}},contador:{{contador}}</h3>
+        <hr>
+        <h2>Modificadores de eventos</h2>
+        <p>Existen modificadores de eventos aquí se muestra una lista</p>
+        <table border="1">
+            <tr style="background-color: black; color: aliceblue;">
+                <td>Modificador</td>
+                <td>Ejemplo código</td>
+                <td>Ejemplo real</td>
+                <td>Para que sirve?</td>                
+            </tr>
+            <tr>
+                <td>once</td>
+                <td><code>v-on:click.once</code></td>
+                <td><button v-on:click.once="sumar(3)">suma 3</button>Res:{{total}}</td>
+                <td>Permite un solo click en el botón, previene de erroes.</td>
+            </tr>
+            <tr>
+                <td>stop</td>
+                <td><code>v-on:mousemove.stop</code></td>
+                <td><em>Veáse en el div de color rojo</em></td>
+                <td>Sirve para detener la propagación del evento.</td>
+            </tr>
+            <tr>
+                <td>delete</td>
+                <td><code>v-on:keyup.delete</code></td>
+                <td><input type="text" v-on:keyup.delete="totalDelete++">#- {{totalDelete}}</td>
+                <td>Sirve para controlar que tecla se presionó.</td>
+            </tr>
+            <tr>
+                <td>Evento concatenado</td>
+                <td><code>v-on:keyup.alt.67="noCopiar()"</code></td>
+                <td><input type="text" v-on:keyup.alt.67="noCopiar()"></td>
+                <td>Sirve para ejecutar un comando de teclas y mandar llamar un evento.</td>
+            </tr>
+            <hr>
+            <h3>La documentación de los modificadores se encuentra en <a href="http://www.vuejs.org">http://www.vuejs.org</a> -> EventHandling -> Event Modifiers && key Modifiers</h3>
+            <hr>
+        </table>
+        <hr>
+        <input type="text" v-on:keyup="incrementaLetras">
+        <br>
+        Total de letras escritas: {{ttletras}}
+        <hr>
+        Nota: ASÍ COMO PARA LA DIRECTIVA V-BIND SE ABREVIA ":", LA DIRECTIVA V-ON SE ABREVIA "@";
+    </div>
+    <script src="vue.js"></script>
+</body>
+</html>

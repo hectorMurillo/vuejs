@@ -1,23 +1,23 @@
 new Vue({
-    el:"#eventos",
+    el:'#app',
     data:{
-        contador:0,
-        x:0,
-        y:0
+        titulo:'Lista de tareas',
+        tareas:[
+            {
+                texto:'Aprender Vuejs',
+                terminada:false
+            },
+            {
+                texto:'Aprender Angular 2',
+                terminada:false
+            },
+            {
+                texto:'Aprender Ionic 2',
+                terminada:false
+            }
+        ]
     },
     methods:{
-        sumarUno:function(){
-            this.contador+=1;        
-        },
-        restarUno: function(){
-            this.contador-=1;
-        },
-        alerta:function(mensaje){
-            alert(mensaje);
-        },
-        mostrarUbicacion:function(evento){
-            this.x = evento.clientX;
-            this.y = evento.clientY;
-        }
+
     }
 })
