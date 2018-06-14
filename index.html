@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/vue"></script>    
+    <title>Eventos</title>
+</head>
+<body>
+    <div id="eventos">
+        <button v-on:mouseEnter="sumarUno">
+            Sumar uno
+        </button>
+        <button v-on:mouseEnter="restarUno">
+            Restar uno
+        </button>
+        <button v-on:click="alerta('Esta es una alerta.')">
+            Mostrar alerta
+        </button>
+        <hr>
+        {{contador}}
+        <hr>
+        <hr>
+        <br>
+        <h2>Pase el mouse por el cuadro</h2>
+        <h3>Se le puede mandar más de un evento a un elemento</h3>
+        <div style="height:300px;border-color:blue; border:1px; border-style:solid;"
+             v-on:mousemove="mostrarUbicacion"
+             v-on:click="contador++">             
+        </div>
+        <h3 style="font-size: 46px;">x:{{x}},y:{{y}},contador:{{contador}}</h3>
+    </div>
+    <script src="vue.js"></script>
+</body>
+</html>
