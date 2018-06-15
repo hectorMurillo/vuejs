@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">    
+    <link rel="stylesheet" href="estilos.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>    
+    <title>Eventos</title>
+</head>
+<body style="font-size: 18px;" class="container">   
+    <div id="app" class="jumbotron">
+        <h2>{{titulo}}</h2>
+        <div class="input-group">
+            <input  type="text" placeholder="Escribe una nueva tarea" 
+                    v-model="nuevaTarea" class="form-control"
+                    v-on:keydown.enter="agregarTarea()">
+            <span class="input-group-append">
+                <button type="button" class="btn btn-primary" v-on:click="agregarTarea()">Agregar</button>
+            </span>
+        </div>
+        <ul class="list-group">
+            <li v-for="(tarea,index) in tareas" class="list-group-item" v-bind:class="{terminada: tarea.terminada}">
+                {{tarea.texto}}                
+                <span class="float-right">
+                        <button type="button" class="btn btn-success btn-sm" 
+                                style="font-size: 16px; font-weight: bold" v-on:click="tarea.terminada = !tarea.terminada">
+                                <b>✓</b>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-sm" 
+                                style="font-size: 16px; font-weight: bold" v-on:click="borrartarea(index)">
+                                <b>&times;</b>
+                        </button>            
+                </span>
+            </li>            
+        </ul>
+    </div> 
+    <script src="vue.js"></script>
+</body>
+</html>
